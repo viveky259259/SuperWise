@@ -1,4 +1,3 @@
-//import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -22,7 +21,9 @@ class _DashboardState extends State<Dashboard> {
 
     return new Scaffold(
         appBar: new AppBar(
-          title: new Text('SuperWise Construction Pvt. Ltd.'),
+          title: new Text('SuperWise Construction Pvt Ltd.',
+              style: TextStyle(fontSize: 19, color: Colors.white70)),
+          iconTheme: new IconThemeData(color: Colors.white70),
           backgroundColor: Colors.blueGrey,
         ),
       drawer: Drawer(
@@ -37,37 +38,77 @@ class _DashboardState extends State<Dashboard> {
                       children: <Widget>[
                         CircleAvatar(
                           backgroundColor: Colors.grey,
-                          radius: 30,
+                          radius: 25,
                         ),
                         Expanded(
-                          child: Text('User Name',textAlign: TextAlign.left,
-                            style: TextStyle(color: Colors.white,fontSize: 20),),
+                          child: Column(
+                            children: [
+                              Column(
+                                children: <Widget>[
+                                  Padding(
+                                    padding: const EdgeInsets.all(2),
+                                    child: Text(
+                                      "User Name", textAlign: TextAlign.left,
+                                      style: TextStyle(
+                                          color: Colors.white, fontSize: 20),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              //SizedBox(height:1,width: 200),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 0.0),
+                                child: Text(
+                                  "email@domain.com", textAlign: TextAlign.left,
+                                  style: TextStyle(color: Colors.white70),
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
-
+                        Padding(
+                          padding: EdgeInsets.only(left: 0.0),
+                          child: RaisedButton(
+                            textColor: Colors.white,
+                            child: Text("ADMIN"),
+                            onPressed: () {},
+                            shape: new RoundedRectangleBorder(
+                              borderRadius: new BorderRadius.circular(40.0),
+                            ),
+                          ),
+                        )
                       ],
+                      mainAxisAlignment: MainAxisAlignment.start,
                     ),
                   ],
                 ),
                 decoration: BoxDecoration(
-                  color: Colors.blue,
+                  color: Colors.lightBlue,
                 ),
               ),
-              ListTile(
-                title: Text("Resource"),
-                subtitle: Text("Material, Equipment, Labour, Tools")
-              ),
-              ListTile(
-                title: Text("Task Report"),
-                subtitle: Text("Task schedule, Summary, Alerts"),
-              ),
-              ListTile(
-                title: Text("Cost Report"),
-                subtitle: Text("Cost Planning, Measurements, Summary"),
-              ),
-              ListTile(
-                title: Text("Quality & Safety"),
-                subtitle: Text("Issues, NCR, Checklist"),
-              )
+
+//              Expanded(
+//                child: ListView(
+//                  children: <Widget>[
+//                 ListTile(
+//                    title: Text("Resource"),
+//                    subtitle: Text("Material, Equipment, Labour, Tools")
+//              ),
+//                 ListTile(
+//                    title: Text("Task Report"),
+//                    subtitle: Text("Task schedule, Summary, Alerts"),
+//              ),
+//                  ListTile(
+//                    title: Text("Cost Report"),
+//                    subtitle: Text("Cost Planning, Measurements, Summary"),
+//              ),
+//                  ListTile(
+//                    title: Text("Quality & Safety"),
+//                    subtitle: Text("Issues, NCR, Checklist"),
+//                ),
+//    ],
+//                ),
+//              )
             ]
         ),
       ),
@@ -77,21 +118,28 @@ class _DashboardState extends State<Dashboard> {
           type: BottomNavigationBarType.shifting,
           items: [BottomNavigationBarItem(
               icon: Icon(
-                  Icons.ac_unit, color: Color.fromARGB(255, 0, 0, 0)),
-              title: new Text('Project')
+                  Icons.dashboard, color: Colors.grey),
+              activeIcon: Icon(Icons.dashboard,
+                  color: Colors.blue),
+              title: Text('dashboard')
           ),
             BottomNavigationBarItem(
                 icon: Icon(
-                    Icons.access_alarm, color: Color.fromARGB(255, 0, 0, 0)),
-                title: new Text('Dashboard')
+                    Icons.domain, color: Colors.grey),
+                activeIcon: Icon(Icons.domain, color: Colors.blue,),
+                title: Text('Dashboard')
             ),
+            // BottomNavigationBarItem(
+            // icon: Icon(Icons.add, color: Colors.grey),
+            // activeIcon: Icon(Icons.add),
+            // )
           ],
           onTap: (index) {
             _incrementTab(index);
           },
-
         ),
     );
   }
 }
+
 
