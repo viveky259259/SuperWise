@@ -25,7 +25,9 @@ class _DashboardState extends State<Dashboard> {
               style: TextStyle(fontSize: 19, color: Colors.white70)),
           iconTheme: new IconThemeData(color: Colors.white70),
           backgroundColor: Colors.blueGrey,
+
         ),
+
       drawer: Drawer(
 
         child: ListView(
@@ -66,26 +68,29 @@ class _DashboardState extends State<Dashboard> {
                             ],
                           ),
                         ),
-                        Padding(
-                          padding: EdgeInsets.only(left: 0.0),
-                          child: RaisedButton(
-                            textColor: Colors.white,
-                            child: Text("ADMIN"),
-                            onPressed: () {},
-                            shape: new RoundedRectangleBorder(
-                              borderRadius: new BorderRadius.circular(40.0),
-                            ),
-                          ),
-                        )
+
                       ],
-                      mainAxisAlignment: MainAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
                     ),
+                    Padding(
+                      padding: EdgeInsets.only(left: 0.0),
+                      child: new FlatButton(
+                        color: Colors.blue,
+                        textColor: Colors.white,
+                        child: Text("ADMIN"),
+                        onPressed: () {},
+                        shape: new RoundedRectangleBorder(
+                          borderRadius: new BorderRadius.circular(40.0),
+                        ),
+                      ),
+                    )
                   ],
                 ),
                 decoration: BoxDecoration(
                   color: Colors.lightBlue,
                 ),
               ),
+
 
 //              Expanded(
 //                child: ListView(
@@ -141,5 +146,3 @@ class _DashboardState extends State<Dashboard> {
     );
   }
 }
-
-
