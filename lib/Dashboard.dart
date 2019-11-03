@@ -46,6 +46,9 @@ class _DashboardState extends State<Dashboard> {
                           child: Column(
                             children: [
                               Column(
+                                         mainAxisAlignment: MainAxisAlignment.start,
+         crossAxisAlignment: CrossAxisAlignment.start,
+
                                 children: <Widget>[
                                   Padding(
                                     padding: const EdgeInsets.all(2),
